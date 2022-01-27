@@ -1,10 +1,10 @@
-local function getRandom(arr, arr2, ptr_to_i)
+local function getRandom(arr, arr2, ptrToI)
 	local int = math.random(1, 10)
 	local iters = 0
-	while (table.find(arr, int) or (arr2 and (arr2[ptr_to_i[1]] == int))) do
+	while (table.find(arr, int) or (arr2 and (arr2[ptrToI[1]] == int))) do
 		int = math.random(1, 10)
 		iters += 1
-		if (arr2 and iters > 1 and #arr == 9) then ptr_to_i[1] = 1 table.clear(arr) end
+		if (arr2 and iters > 1 and #arr == 9) then ptrToI[1] = 1 table.clear(arr) end
 	end
 
 	return int
